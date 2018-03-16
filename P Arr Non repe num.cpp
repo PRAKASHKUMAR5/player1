@@ -3,23 +3,24 @@
 using namespace std;
 int main()
 {
-	int n;
+	int n,count;
 	cout<<"Enter the limits and values:"<<endl;
 	cin>>n;
-	int arr[n],p[n];
+	int a[n];
 	for(int i=0;i<n;i++)
 	{
-		cin>>arr[i];
+		cin>>a[i];
 	}
-	sort(arr,arr+n);
-	for(int j=0;j<n;j+=2)
+	for(int i=0;i<n;i++)
 	{
-			if(arr[j]!=arr[j+1])
-		   {
-			 cout<<arr[j];
-			 break;
-		   }
-		
-	}	
+		count=0;
+		for(int j=0;j<n;j++)
+		{
+			if(a[i]==a[j])
+			count++;
+		}
+		if(count==1)
+		cout<<a[i]<<" ";
+	}
    return 0;
 }
